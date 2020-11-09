@@ -1,4 +1,4 @@
-/**
+/*
  * B42 protocol Arduino library
  *
  * Copyright (C) 2019-2020 Archimedes Exhibitions GmbH

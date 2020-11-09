@@ -1,4 +1,4 @@
-/**
+/*
  * B42 protocol Arduino library
  *
  * Copyright (C) 2019-2020 Archimedes Exhibitions GmbH
@@ -29,9 +29,9 @@
 #include <Arduino.h>
 
 
-#define B42_DEFAULT_SERIAL_SPEED    115200
-#define B42_MAX_COMMANDS            16
-#define B42_MAX_DATA_LENGTH         3
+#define B42_DEFAULT_SERIAL_SPEED  115200
+#define B42_MAX_COMMANDS          16
+#define B42_MAX_DATA_LENGTH       3
 
 #define B42_ERROR_NONE            0x00
 // protocol errors
@@ -41,10 +41,8 @@
 #define B42_ERROR_EXPECT_DATA2    0x04
 #define B42_ERROR_EXPECT_DATA3    0x05
 // command processing errors
-#define B42_ERROR_INVALID_COMMAND 0x10
-// feature not yet implemented
-#define B42_ERROR_NOT_IMPLEMENTED 0x3F
-
+#define B42_ERROR_INVALID_COMMAND 0x0F
+// applications should use codes [0x10..0x3F] for custom errors
 
 typedef uint8_t B42ReturnCode;
 typedef B42ReturnCode (*CommandHandlerPtr)(uint8_t dataLen, uint8_t* data);
