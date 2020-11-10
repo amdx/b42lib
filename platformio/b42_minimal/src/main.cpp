@@ -1,0 +1,1 @@
+../../../examples/B42Minimal/B42Minimal.ino
