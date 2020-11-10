@@ -52,11 +52,13 @@ void B42::update()
         if (inByte == 0) {
             reportError(B42_ERROR_ZERO_BYTE);
             m_expectedFrameSeq = 0;
-            continue;
+            continue; // wait for next valid command byte
         } else if (m_expectedFrameSeq != frameSeq) {
             reportError(B42_ERROR_EXPECT_COMMAND + m_expectedFrameSeq);
             m_expectedFrameSeq = 0;
-            continue;
+            if (frameSeq != 0) { // not a command byte
+                continue; // wait for next valid command byte
+            } // else: process command byte
         }
 
         if (frameSeq == 0) {
