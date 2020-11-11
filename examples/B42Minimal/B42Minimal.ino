@@ -29,6 +29,8 @@
  * HOST (computer) <--- B42 ---> BOARD (Arduino)
  *
  * This example uses 4 commands for the application protocol.
+ * It can be tested with the B42 minimal examples from
+ * https://github.com/amdx/pyb42
  */
 
 #include <B42.h>
